@@ -27,7 +27,7 @@ const formSchema = z.object({
 });
 
 const CreatePage = () => {
-    const router = useRouter()
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -39,11 +39,11 @@ const CreatePage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-        const response = await axios.post("/api/courses", values)
-        router.push(`/teacher/courses/${response.data.id}`)
-        toast.success("Course created")
+      const response = await axios.post("/api/courses", values);
+      router.push(`/teacher/courses/${response.data.id}`);
+      toast.success("Course created");
     } catch {
-        toast.error("Something went wrong")
+      toast.error("Something went wrong");
     }
   };
 
@@ -86,10 +86,9 @@ const CreatePage = () => {
                   Cancel
                 </Button>
               </Link>
-              <Button
-                type="submit"
-                disabled={!isValid || isSubmitting}
-              >Continue</Button>
+              <Button type="submit" disabled={!isValid || isSubmitting}>
+                Continue
+              </Button>
             </div>
           </form>
         </Form>
