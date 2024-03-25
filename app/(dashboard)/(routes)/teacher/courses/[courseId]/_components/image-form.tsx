@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
-import { FileUpload } from "@/components/file.upload";
+import { FileUpload } from "@/components/file-upload";
 
 interface ImageFormProps {
   initialData: Course;
